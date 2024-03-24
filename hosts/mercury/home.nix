@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+
+  home.username = "jacobpleiness";
+  home.homeDirectory = "/Users/jacobpleiness";
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
 
@@ -46,7 +50,6 @@
     pkgs.nixpkgs-fmt
     pkgs.protobuf
     pkgs.ripgrep
-    pkgs.rectangle
     pkgs.shellcheck
     pkgs.tree
     pkgs.wget

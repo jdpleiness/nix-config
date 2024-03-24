@@ -42,7 +42,6 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.jacobpleiness = import ./hosts/mercury/home.nix;
-              users.users.jacobpleiness.home = "/Users/jacobpleiness";
             }
             ./hosts/mercury/default.nix
           ];

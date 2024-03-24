@@ -33,8 +33,17 @@
     # updates homebrew packages on activation,
     # can make darwin-rebuild much slower (otherwise i'd forget to do it ever though)
     casks = [
-      "hammerspoon"
+      "cleanshot"
       "discord"
+      "google-chrome"
+      "hammerspoon"
+      "monodraw"
+      "rectangle"
     ];
+  };
+
+  users.users.jacobpleiness = {
+    home = "/Users/jacobpleiness";
+    shell = pkgs.fish;
   };
 }
