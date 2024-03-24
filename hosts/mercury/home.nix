@@ -39,15 +39,18 @@
     pkgs.atuin
     pkgs.awscli
     pkgs.bat
+    pkgs.btop
     pkgs.buf
     pkgs.flyctl
     pkgs.elixir
+    pkgs.gh
     pkgs.git
     pkgs.go
     pkgs.gnupg
     pkgs.htop
     pkgs.hugo
     pkgs.nixpkgs-fmt
+    pkgs.neofetch
     pkgs.protobuf
     pkgs.ripgrep
     pkgs.shellcheck

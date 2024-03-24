@@ -18,6 +18,8 @@
         system.defaults = {
           dock.autohide = true;
           dock.mru-spaces = false;
+          dock.autohide-delay = 0.0;
+          dock.autohide-time-modifier = 0.4;
           finder.AppleShowAllExtensions = true;
           NSGlobalDomain.InitialKeyRepeat = 12;
           NSGlobalDomain.KeyRepeat = 1;
