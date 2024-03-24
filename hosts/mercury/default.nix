@@ -30,15 +30,32 @@
   homebrew = {
     enable = true;
     onActivation.upgrade = true;
-    # updates homebrew packages on activation,
-    # can make darwin-rebuild much slower (otherwise i'd forget to do it ever though)
+    onActivation.cleanup = "uninstall";
+    brews = [
+      "docker"
+    ];
+
     casks = [
+      "1password"
+      "arq"
       "cleanshot"
       "discord"
+      "focusrite-control-2"
       "google-chrome"
       "hammerspoon"
+      "iterm2"
+      "mixed-in-key"
       "monodraw"
+      "notion-calendar"
+      "obs"
+      "obsidian"
+      "opal-composer"
+      "postico"
       "rectangle"
+      "rekordbox"
+      "visual-studio-code"
+      "xld"
+      "zed"
     ];
   };
 

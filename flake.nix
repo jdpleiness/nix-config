@@ -19,6 +19,9 @@
           dock.autohide = true;
           dock.mru-spaces = false;
           finder.AppleShowAllExtensions = true;
+          NSGlobalDomain.InitialKeyRepeat = 12;
+          NSGlobalDomain.KeyRepeat = 1;
+          NSGlobalDomain.ApplePressAndHoldEnabled = false;
         };
 
         # Used for backwards compatibility, please read the changelog before changing.
