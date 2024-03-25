@@ -2,10 +2,10 @@
   description = "jacob's darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.11-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -22,7 +22,7 @@
           dock.autohide-time-modifier = 0.4;
           finder.AppleShowAllExtensions = true;
           NSGlobalDomain.InitialKeyRepeat = 12;
-          NSGlobalDomain.KeyRepeat = 1;
+          NSGlobalDomain.KeyRepeat = 2;
           NSGlobalDomain.ApplePressAndHoldEnabled = false;
         };
 
@@ -32,6 +32,8 @@
 
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
+
+        nixpkgs.config.allowUnfree = true;
       };
     in
     {
@@ -46,9 +48,22 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.jacobpleiness = import ./hosts/mercury/home.nix;
+              home-manager.users.jacob = import ./hosts/mercury/home.nix;
             }
             ./hosts/mercury/default.nix
+          ];
+        };
+        "eros" = nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [
+            configuration
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.jacob = import ./hosts/eros/home.nix;
+            }
+            ./hosts/eros/default.nix
           ];
         };
       };

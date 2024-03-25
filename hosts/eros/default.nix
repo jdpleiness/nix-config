@@ -21,7 +21,7 @@
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
-  nix.settings.trustedUsers = [ "root" "jacobpleiness" ];
+  nix.settings.trustedUsers = [ "root" "jacob" ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true; # default shell on catalina
@@ -34,35 +34,32 @@
     onActivation.upgrade = true;
     onActivation.cleanup = "uninstall";
     brews = [
-      "docker"
+      # "docker"
     ];
 
     casks = [
-      "1password"
+      # "1password"
       "arq"
       "cleanshot"
-      "discord"
-      "focusrite-control-2"
-      "google-chrome"
-      "hammerspoon"
-      "iterm2"
-      "mixed-in-key"
-      "monodraw"
-      "notion-calendar"
-      "obs"
-      "obsidian"
-      "opal-composer"
-      "postico"
-      "rectangle"
-      "rekordbox"
-      "visual-studio-code"
-      "xld"
-      "zed"
+      # "discord"
+      # "google-chrome"
+      # "hammerspoon"
+      # "iterm2"
+      # "monodraw"
+      # "notion-calendar"
+      # "obs"
+      # "obsidian"
+      # "opal-composer"
+      # "postico"
+      "raycast"
+      # "rectangle"
+      # "visual-studio-code"
+      # "zed"
     ];
   };
 
-  users.users.jacobpleiness = {
-    home = "/Users/jacobpleiness";
+  users.users.jacob = {
+    home = "/Users/jacob";
     shell = pkgs.fish;
   };
 }
