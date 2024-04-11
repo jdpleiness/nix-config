@@ -3,6 +3,7 @@
 
   home.username = "jacob";
   home.homeDirectory = "/Users/jacob";
+  home.sessionVariables.EDITOR = "nvim";
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -39,18 +40,27 @@
     pkgs.atuin
     pkgs.awscli
     pkgs.bat
+    pkgs.bazel-buildtools
+    pkgs.bazelisk
     pkgs.btop
     pkgs.buf
+    pkgs.corepack_20
+    pkgs.direnv
     pkgs.gh
     pkgs.git
-    pkgs.go
     pkgs.gnupg
-    pkgs.jq
-    pkgs.kubernetes-helm
+    pkgs.go
+    pkgs.go-tools
     pkgs.htop
-    pkgs.nixpkgs-fmt
+    pkgs.jq
+    pkgs.kind
+    pkgs.kubectl
+    pkgs.kubernetes-helm
     pkgs.neofetch
+    pkgs.nixpkgs-fmt
+    pkgs.nodejs_20
     pkgs.packer
+    pkgs.parallel
     pkgs.protobuf
     pkgs.ripgrep
     pkgs.shellcheck
@@ -107,6 +117,8 @@
 
       interactiveShellInit = ''
         set fish_greeting # N/A
+        alias k="kubectl"
+        alias kgp="kubectl get pods"
       '';
     };
 
